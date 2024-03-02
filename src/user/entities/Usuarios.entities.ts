@@ -2,7 +2,7 @@ import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
 
 @Index("email", ["email"], { unique: true })
 @Entity("usuarios", { schema: "USERSDB" })
-export class Usuarios {
+export class Usuario {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
@@ -28,8 +28,8 @@ export class Usuarios {
   city: string | null;
 
   @Column("date", { name: "created_at", nullable: true })
-  createdAt: string | null;
+  createdAt: Date = new Date()
 
   @Column("date", { name: "updated_at", nullable: true })
-  updatedAt: string | null;
+  updatedAt: Date = new Date()
 }

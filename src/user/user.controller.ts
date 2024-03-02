@@ -24,12 +24,20 @@ export class UserController {
 
   @Get()
   findAll() {
-    return this.userService.findAll();
+    try {
+      const users = this.userService.findAll();
+      return users
+    } catch (error) {
+      if (error instanceof Error) {
+        return error
+      }
+    }
+    
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
+    return this.userService.findOne(+id)
   }
 
   @Patch(':id')
