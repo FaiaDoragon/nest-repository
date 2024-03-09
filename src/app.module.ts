@@ -12,8 +12,8 @@ import { Usuario } from './user/entities/Usuarios.entities';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '123456',
-      database: 'APIUSERSDB',
+      password: '123',
+      database: 'DBusuarios',
       synchronize: false,
       entities: [Usuario], // Ajusta esta ruta según la ubicación de tus entidades
     }),

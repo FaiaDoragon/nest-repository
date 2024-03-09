@@ -1,13 +1,36 @@
+// user.dto.ts
+
+import { ApiProperty } from '@nestjs/swagger';
+
 export class UserDto {
-    id: number;
-    name: string;
-    lastName: string;
-    password: string;
-    email: string;
-    phoneNumber: string | null;
-    address: string | null;
-    city: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
-  }
-  
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  name: string;
+
+  @ApiProperty()
+  lastName: string;
+
+  @ApiProperty()
+  password: string;
+
+  @ApiProperty()
+  email: string;
+
+  @ApiProperty()
+  phoneNumber: string | null;
+
+  @ApiProperty()
+  address: string | null;
+
+  @ApiProperty()
+  city: string | null;
+
+  @ApiProperty()
+  createdAt: Date | null;
+
+  @ApiProperty()
+  updatedAt: Date | null;
+
+}

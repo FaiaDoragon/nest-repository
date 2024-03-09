@@ -26,18 +26,17 @@ export class UserController {
   findAll() {
     try {
       const users = this.userService.findAll();
-      return users
+      return users;
     } catch (error) {
       if (error instanceof Error) {
-        return error
+        return error;
       }
     }
-    
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id)
+    return this.userService.findOne(+id);
   }
 
   @Patch(':id')

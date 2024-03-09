@@ -18,21 +18,16 @@ export class UserService {
   }
 
   async findAll(): Promise<Usuario[]> {
-    const usuarios: Usuario[] = await this.userRepository.find()
-    if (usuarios.length !== 0) {
-      return usuarios; 
-    } else {
-      throw new Error (`No hay usuarios Registrados`)
-    }
-      
+    const usuarios: Usuario[] = await this.userRepository.find();
+    return usuarios
   }
 
   async findOne(id: number): Promise<Usuario> {
-    return await this.userRepository.findOne({where : {id}});
+    return await this.userRepository.findOne({ where: { id } });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<Usuario> {
-    const userToUpdate = await this.userRepository.findOne({where : {id}});
+    const userToUpdate = await this.userRepository.findOne({ where: { id } });
     if (!userToUpdate) {
       throw new Error(`User with id ${id} not found`);
     }
